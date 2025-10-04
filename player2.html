@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class ="header">
+            <div class ="container">
+                <div class="header__inner">
+                    <a class="logo" href ="home2.html">
+                        <img class="logo__img" src="images/logo.svg" alt="">
+                    </a>
+                    <nav class="menu">
+                        <ul class="menu__list">
+                            <li class="menu__list-item">
+                                <a href="home2.html" class="menu__list-link">
+                                    <img class="home__img" src="images/home.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a href="library.html" class="menu__list-link">
+                                    <img class="library__img" src="images/library.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a href="Messages.html" class="menu__list-link">
+                                    <img class="msgs__img" src="images/messages.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu__list-item search-container">
+                                <input type="text" class="search-input" placeholder="Поиск...">
+                            </li>
+                            <li class="menu__list-item">
+                              <a href="sub.html" class="menu__list-link">
+                                  <div style="position: relative;"> 
+                                      <img src="images/bgpremium.svg" alt="" style="width: 100%;" height="100%"> 
+                                      <img src="images/premium.svg" alt="" style="position: absolute; top: 10px; left: 3px; width: 90%;"> 
+                                  </div>  
+                              </a>
+                          </li>
+                            <li class="menu__list-item">
+                                <a href="artist.html" class="menu__list-link">Для Артистов</a>
+                            </li>
+                            <li class="menu__list-item">
+                                <span class="menu__list-link">Загрузить</span>>
+                            </li>
+                            <li class="menu__list-item">
+                                <a href="profile.html" class="menu__list-link">
+                                    <div style="position: relative;">
+                                        <img class="pfp__img" src="images/pfp.jpg" alt="" width="100%">
+                                    </div>         
+                                </a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a href="#" class="menu__list-link">
+                                    <img class="ntfcts__img" src="images/ntfcts.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a href="settings.html" class="menu__list-link">
+                                    <img class="stngs__img" src="images/settings.svg" alt="">
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <section class="artist-page">
+                <div class="artist-header">
+                    <div class="player-background" style="background-image: url('images/bgplayer.svg')">
+                        <div class="artist-avatar-container">
+                          <a href="#" class="playerbutton" id="playButton">
+                            <img src="images/playbutton.svg" alt="Play" class="bigplaybutton" id="playIcon">
+                          </a>
+                          <div>
+                            <h1 class="songnicknamep">Prada</h1>
+                            <h1 class="artist-nicknamep">ranzyy, Sad Lxner</h1>
+                          </div>
+                        </div>
+                        <div class="infosong">
+                          <h1 class="date">2 года назад</h1>
+                          <h1 class="genre">#Хип-хоп</h1>
+                        </div>
+                        <img src="images/prada.svg" alt="" class="playercover">
+                        
+                        <!-- Добавляем аудио элемент -->
+                        <audio id="audioPlayer" src="audio/neprada.mp3"></audio>
+                        
+                        <div class="song-controls">
+                          <!-- Левая группа иконок -->
+                          <div class="control-group left-group">
+                            <div class="control-btn like">
+                                <img src="images/like.png" alt="Like" class="control-icon">
+                            </div>
+                            <div class="control-btn repost">
+                                <img src="images/repost.png" alt="Repost" class="control-icon">
+                            </div>
+                            <div class="control-btn share">
+                                <img src="images/share.png" alt="Share" class="control-icon">
+                            </div>
+                            <div class="control-btn queue">
+                                <img src="images/queue.png" alt="Queue" class="control-icon">
+                            </div>
+                            <div class="control-btn subscribe">
+                                <img src="images/sub.png" alt="Subscribe" class="control-icon">
+                            </div>
+                            <div class="control-btn more">
+                                <img src="images/more.png" alt="More" class="control-icon">
+                            </div>
+                        </div>
+                          
+                          <!-- Ползунок прогресса -->
+                          <div class="progress-container">
+                            <span class="time current-time" id="currentTime">0:00</span>
+                            <div class="progress-bar" id="progressBar">
+                              <div class="progress" id="progress"></div>
+                              <div class="progress-handle" id="progressHandle"></div>
+                            </div>
+                            <span class="time duration" id="duration">2:45</span>
+                          </div>
+                          
+                          <!-- Правая группа иконок -->
+                          <div class="control-group right-group">
+                            <div class="control-btn replay">
+                                <img src="images/replay.png" alt="Replay" class="control-icon">
+                            </div>
+                            <div class="control-btn mix">
+                                <img src="images/mix.png" alt="Mix" class="control-icon">
+                            </div>
+                            <div class="control-btn notrcmnd">
+                                <img src="images/close.png" alt="Don't recommend" class="control-icon">
+                            </div>
+                            <div class="control-btn volume">
+                                <img src="images/volume.png" alt="Volume" class="control-icon">
+                            </div>
+                        </div>
+                        </div>
+                      </div>
+                </div>
+        
+                <div class="artist-content">
+                    <div class="artist-main">
+                        <div class="comments-section">
+                            <h3 class="comments-title">Комментарии <span class="comments-count">(4)</span></h3>
+                            
+                            <div class="comment-list">
+                                <!-- Первые 3 комментария (видимые) -->
+                                <div class="comment">
+                                    <img src="images/ranzyy.jpg" alt="Аватар" class="comment-avatar">
+                                    <div class="comment-content">
+                                        <div class="comment-header">
+                                            <span class="comment-author">ranzyy</span>
+                                            <span class="comment-time">2 часа назад</span>
+                                        </div>
+                                        <p class="comment-text">Это моя песня с моим братком</p>
+                                        <div class="comment-likes">
+                                            <img src="images/like.png" alt="Лайк" class="like-icon" data-likes="142">
+                                            <span class="likes-count">142</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="comment">
+                                    <img src="images/rihana.jpg" alt="Аватар" class="comment-avatar">
+                                    <div class="comment-content">
+                                        <div class="comment-header">
+                                            <span class="comment-author">Rihanna</span>
+                                            <span class="comment-time">5 часов назад</span>
+                                        </div>
+                                        <p class="comment-text">Shine bright like a diamond, Ромчик</p>
+                                        <div class="comment-likes">
+                                            <img src="images/like.png" alt="Лайк" class="like-icon" data-likes="89">
+                                            <span class="likes-count">89</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="comment">
+                                    <img src="images/jah.jpg" alt="Аватар" class="comment-avatar">
+                                    <div class="comment-content">
+                                        <div class="comment-header">
+                                            <span class="comment-author">Jah Khalib</span>
+                                            <span class="comment-time">вчера</span>
+                                        </div>
+                                        <p class="comment-text">Брат, это лучше моей Медины</p>
+                                        <div class="comment-likes">
+                                            <img src="images/like.png" alt="Лайк" class="like-icon" data-likes="76">
+                                            <span class="likes-count">76</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Остальные комментарии (скрытые) -->
+                                <div class="comment hidden">
+                                    <img src="images/trav.jpg" alt="Аватар" class="comment-avatar">
+                                    <div class="comment-content">
+                                        <div class="comment-header">
+                                            <span class="comment-author">Travis Scott</span>
+                                            <span class="comment-time">3 дня назад</span>
+                                        </div>
+                                        <p class="comment-text">Отличный трек, слушаю на повторе!</p>
+                                        <div class="comment-likes">
+                                            <img src="images/like.png" alt="Лайк" class="like-icon" data-likes="59">
+                                            <span class="likes-count">59</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Ещё скрытые комментарии... -->
+                            </div>
+                            
+                            <button class="show-more-btn" id="show-more-comments">Показать все комментарии</button>
+                            
+                            <!-- Форма для нового комментария -->
+                            <div class="comment-form">
+                                <textarea placeholder="Напишите комментарий..." style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; margin-top: 20px;"></textarea>
+                                <button style="background-color: #FBDFAF; color: white; border: none; padding: 8px 15px; border-radius: 4px; margin-top: 10px;">Отправить</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lyrics-container">
+                        <h2 class="lyrics-title">Текст песни</h2>
+                        
+                        <div class="lyrics-content">
+                            <div class="lyrics-text collapsed" id="lyrics-text">
+                Yeah
+                Make sure my skin sound tight.
+                Once you have enough food for this mud
+                Only when I had of wet was clean me bad
+                Draw it near the void or make it off the cold
+                Only then a nigga died he was playing at red
+                But now I'm no longer at their soda table so often
+                They only did a other granite is awake there coffin
+                From try to cope it down the hole
+                Take sad that little, often abortions
+                Without precautions
+                Prepare to be placed.
+                There's too many who weren't so juvenil
+                Too many voices thinking they could make a fortune story
+                And many wants to be victim instead of achieving their masters
+                It's just a lot easier to know about how many ways do things?
+                That's just a problem they'll be done before her pay Cork
+                Do them want in the white books supporting white towns
+                Or am Cork a few you probably missed!
+                He'll be fortunate when you try to fight for your existence
+                It isn't really trying for this this
+                When you try to be righteous
+                But know a nigga might just
+                I answered all those fun echoes
+                            </div>
+                            
+                            <button class="show-more-btn" id="show-more-btn">Показать всё</button>
+                        </div>
+                    </div>
+                    <div class="similar-artists">
+                        <div class="clpdsds">
+                            <h3 class="similar-title">Похожие песни</h3>
+                            <span class="moresongs">Все</span>
+                        </div>
+                        <div class="artists-column">
+                            <div class="artist-card">
+                                <div class="artist-info">
+                                    <img src="images/medina.jpg" alt="Dennis Rodman" class="artist-photo">
+                                    <div>
+                                        <h2 class="artist-name">Медина(prod.by pyakovl)</h2>
+                                        <p class="artist-followers">Jah Khalib</p>
+                                    </div>
+                                </div>   
+                            </div>
+                            
+                            <div class="artist-card">
+                                <div class="artist-info">
+                                    <img src="images/diamonds.jpg" alt="Dennis Rodman" class="artist-photo">
+                                    <div>
+                                        <h2 class="artist-name">Diamonds</h2>
+                                        <p class="artist-followers">Rihanna</p>
+                                    </div>
+                                </div>   
+                            </div>
+                            
+                            <div class="artist-card">
+                                <div class="artist-info">
+                                    <img src="images/mockingbird.jpg" alt="Dennis Rodman" class="artist-photo">
+                                    <div>
+                                        <h2 class="artist-name">Mockingbird</h2>
+                                        <p class="artist-followers">Eminem</p>
+                                    </div>
+                                </div>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__text-links">
+                    <span class="footer__text">Правобладателям</span>
+                    <span class="footer__text">Пользовательское соглашение</span>
+                    <span class="footer__text">Правила рекомендаций (РФ)</span>
+                    <span class="footer__text">Справка</span>
+                </div>
+                
+                <p class="footer__notice">
+                    Сервис Leed может содержать информацию, не предназначенную для несовершеннолетних
+                </p>
+                
+                <p class="footer__copyright">
+                    © 2025 Leed<br>
+                    Проект компании Leed
+                </p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioPlayer = document.getElementById('audioPlayer');
+            const playButton = document.getElementById('playButton');
+            const playIcon = document.getElementById('playIcon');
+            const progressBar = document.getElementById('progressBar');
+            const progress = document.getElementById('progress');
+            const progressHandle = document.getElementById('progressHandle');
+            const currentTimeElement = document.getElementById('currentTime');
+            const durationElement = document.getElementById('duration');
+            const songLikeBtn = document.getElementById('songLikeBtn');
+            const songLikeIcon = document.getElementById('songLikeIcon');
+            
+            // Обновляем длительность трека при загрузке метаданных
+            audioPlayer.addEventListener('loadedmetadata', function() {
+                const duration = audioPlayer.duration;
+                durationElement.textContent = formatTime(duration);
+            });
+            
+            // Обновление времени воспроизведения
+            audioPlayer.addEventListener('timeupdate', function() {
+                const currentTime = audioPlayer.currentTime;
+                const duration = audioPlayer.duration;
+                const progressPercent = (currentTime / duration) * 100;
+                
+                progress.style.width = progressPercent + '%';
+                progressHandle.style.left = progressPercent + '%';
+                currentTimeElement.textContent = formatTime(currentTime);
+            });
+            
+            // Обработчик клика по кнопке play/pause
+            playButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (audioPlayer.paused) {
+                audioPlayer.play();
+                playIcon.src = 'images/pausebutton.png'; // Меняем на иконку паузы
+                } else {
+                audioPlayer.pause();
+                playIcon.src = 'images/playbutton.svg'; // Меняем на иконку play
+                }
+            });
+            
+            // Обработчик клика по прогресс-бару
+            progressBar.addEventListener('click', function(e) {
+                const rect = this.getBoundingClientRect();
+                const pos = (e.clientX - rect.left) / rect.width;
+                audioPlayer.currentTime = pos * audioPlayer.duration;
+            });
+            
+            // Функция для форматирования времени (секунды в мм:сс)
+            function formatTime(seconds) {
+                const minutes = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+            }
+            
+            // Обновляем иконку при окончании воспроизведения
+            audioPlayer.addEventListener('ended', function() {
+                playIcon.src = 'images/playbutton.svg';
+            });
+            
+            // Обработчик лайка песни
+            songLikeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (songLikeIcon.src.includes('like.png')) {
+                    songLikeIcon.src = 'images/likeactive.svg';
+                    songLikeBtn.classList.add('liked');
+                } else {
+                    songLikeIcon.src = 'images/like.png';
+                    songLikeBtn.classList.remove('liked');
+                }
+            });
+            });
+        document.getElementById('show-more-btn').addEventListener('click', function() {
+            const lyricsText = document.getElementById('lyrics-text');
+            const btn = this;
+            
+            if (lyricsText.classList.contains('collapsed')) {
+                lyricsText.classList.remove('collapsed');
+                btn.textContent = 'Свернуть';
+            } else {
+                lyricsText.classList.add('collapsed');
+                btn.textContent = 'Показать всё';
+            }
+        });
+        document.getElementById('show-more-comments').addEventListener('click', function() {
+            const hiddenComments = document.querySelectorAll('.comment.hidden');
+            const btn = this;
+            
+            hiddenComments.forEach(comment => {
+                comment.classList.remove('hidden');
+            });
+            
+            btn.style.display = 'none';
+        });
+        document.querySelectorAll('.like-icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                const likesCount = this.nextElementSibling;
+                const currentLikes = parseInt(likesCount.textContent);
+                const initialLikes = parseInt(this.getAttribute('data-likes'));
+                
+                if (this.classList.contains('active')) {
+                    // Убираем лайк
+                    this.classList.remove('active');
+                    this.src = 'images/like.png';
+                    likesCount.textContent = currentLikes - 1;
+                    likesCount.classList.remove('liked');
+                } else {
+                    // Ставим лайк
+                    this.classList.add('active');
+                    this.src = 'images/likefilled.png';
+                    likesCount.textContent = currentLikes + 1;
+                    likesCount.classList.add('liked');
+                }
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+          // Находим поле поиска
+          const searchInput = document.querySelector('.search-input');
+          
+          // Добавляем обработчик события нажатия клавиши
+          searchInput.addEventListener('keypress', function(e) {
+            // Проверяем, была ли нажата клавиша Enter (код 13)
+            if (e.key === 'Enter') {
+              // Получаем значение из поля поиска
+              const searchQuery = this.value.trim();
+              
+              // Если поле не пустое
+              if (searchQuery) {
+                // Перенаправляем на страницу поиска с параметром запроса
+                window.location.href = 'search2.html';
+              }
+            }
+          });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const notificationsBtn = document.querySelector('.ntfcts__img').closest('a');
+            const notificationsPopup = document.getElementById('notificationsPopup');
+            let popupVisible = false;
+
+            // Функция для обновления позиции попапа
+            function updatePopupPosition() {
+            if (popupVisible) {
+                const header = document.querySelector('.header');
+                const headerRect = header.getBoundingClientRect();
+                notificationsPopup.style.top = `${headerRect.bottom + 10}px`;
+            }
+            }
+
+            // Обработчик клика по иконке уведомлений
+            notificationsBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            popupVisible = !popupVisible;
+            
+            if (popupVisible) {
+                updatePopupPosition();
+                notificationsPopup.style.display = 'block';
+            } else {
+                notificationsPopup.style.display = 'none';
+            }
+            });
+
+            // Закрытие попапа при клике вне его области
+            document.addEventListener('click', function(e) {
+            if (popupVisible && 
+                !notificationsPopup.contains(e.target) && 
+                !notificationsBtn.contains(e.target)) {
+                popupVisible = false;
+                notificationsPopup.style.display = 'none';
+            }
+            });
+
+            // Обновляем позицию при скролле
+            window.addEventListener('scroll', function() {
+            if (popupVisible) {
+                updatePopupPosition();
+            }
+            });
+
+            // Обновляем позицию при ресайзе
+            window.addEventListener('resize', function() {
+            if (popupVisible) {
+                updatePopupPosition();
+            }
+            });
+
+            // Обработчик клика по кнопке подписки
+            const followButtons = document.querySelectorAll('.notification-follow-btn');
+            followButtons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                console.log('Подписаться на пользователя');
+            });
+            });
+        });
+    </script>
+    <div class="notifications-popup" id="notificationsPopup">
+        <div class="notifications-header">
+          <h2 class="notifications-title">Уведомления</h2>
+          <a href="settings.html" class="notifications-settings">Настройки</a>
+        </div>
+        
+        <div class="notification-item">
+          <img src="images/hanamichi.jpg" alt="Hanamichi" class="notification-avatar">
+          <div class="notification-content">
+            <p class="notification-text"><strong>Hanamichi</strong> подписался на ваш профиль</p>
+            <p class="notification-time">5 минут назад</p>
+          </div>
+          <img src="images/sub.png" alt="Подписаться" class="notification-follow-btn">
+        </div>
+        
+        <!-- Здесь могут быть дополнительные уведомления -->
+      </div>
+</body>
+</html>

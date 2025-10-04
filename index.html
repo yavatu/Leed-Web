@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class ="header">
+            <div class ="container">
+                <div class="header__inner">
+                    <a class="logo" href ="#">
+                        <img class="logo__img" src="images/logo.svg" alt="">
+                    </a>
+                    <nav class="menu">
+                        <ul class="menu__list">
+                            <li class="menu__list-item">
+                                <a href="#" class="menu__list-link">
+                                    <img class="home__img" src="images/home.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a href="#" class="menu__list-link">
+                                    <img class="library__img" src="images/library.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a href="#" class="menu__list-link">
+                                    <img class="msgs__img" src="images/messages.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu__list-item search-container">
+                                <input type="text" class="search-input" placeholder="Поиск...">
+                            </li>
+                            <li class="menu__list-item">
+                                <a href="#" class="menu__list-link">
+                                    <div style="position: relative;"> 
+                                        <img src="images/bgpremium.svg" alt="" style="width: 100%;" height="100%"> 
+                                        <img src="images/premium.svg" alt="" style="position: absolute; top: 10px; left: 3px; width: 90%;"> 
+                                    </div> 
+                                </a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a href="#" class="menu__list-link">Для Артистов</a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a href="#" class="menu__list-link">Загрузить</a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a href="#" class="menu__list-link">
+                                    <div style="position: relative;">
+                                        <img class="pfpbg__img" src="images/pfpbg.svg" alt="" style="width: 100%;" height="100%"> 
+                                        <img class="pfpempt__img" src="images/profileempty.svg" alt="" style="position: absolute; top: 0; left: 0; width: 100%;">
+                                    </div>         
+                                </a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a href="#" class="menu__list-link">
+                                    <img class="ntfcts__img" src="images/ntfcts.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu__list-item">
+                                <a href="#" class="menu__list-link">
+                                    <img class="stngs__img" src="images/settings.svg" alt="">
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main class="main"></main>
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__text-links">
+                    <span class="footer__text">Правобладателям</span>
+                    <span class="footer__text">Пользовательское соглашение</span>
+                    <span class="footer__text">Правила рекомендаций (РФ)</span>
+                    <span class="footer__text">Справка</span>
+                </div>
+                
+                <p class="footer__notice">
+                    Сервис Leed может содержать информацию, не предназначенную для несовершеннолетних
+                </p>
+                
+                <p class="footer__copyright">
+                    © 2025 Leed<br>
+                    Проект компании Leed
+                </p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          // Находим поле поиска
+          const searchInput = document.querySelector('.search-input');
+          
+          // Добавляем обработчик события нажатия клавиши
+          searchInput.addEventListener('keypress', function(e) {
+            // Проверяем, была ли нажата клавиша Enter (код 13)
+            if (e.key === 'Enter') {
+              // Получаем значение из поля поиска
+              const searchQuery = this.value.trim();
+              
+              // Если поле не пустое
+              if (searchQuery) {
+                // Перенаправляем на страницу поиска с параметром запроса
+                window.location.href = 'search';
+              }
+            }
+          });
+        });
+        </script>
+</body>
+</html>

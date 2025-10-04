@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="screen-background">
+    <div class="register-container">
+      <div class="left-image">
+        <img src="images/left.jpg" alt="Left illustration" />
+      </div>
+      <div class="form-section">
+        <div class="form-header">
+          <img src="images/logo.svg" alt="Logo" class="logo" />
+          <button class="back-button" onclick="window.location.href='home.html'">← Back</button>
+        </div>
+        <form class="register-form">
+          <h2>Создайте аккаунт</h2>
+          <input type="text" placeholder="Логин" value="" />
+          <input type="email" placeholder="Электронная почта" value="" />
+          <input type="password" placeholder="Пароль" value="" />
+          <input type="password" placeholder="Подтвердите пароль" value="" />
+          <button type="submit" class="register-btn" id="registerBtn">Зарегистрироваться</button>
+          <button type="button" class="signin-btn" id="signinBtn">Войти</button>
+          <label class="terms">
+            <input type="checkbox" checkedz />
+            Регистрируясь, вы принимаете наши
+            <span>Условия</span>, и
+            <span>Политику конфиденциальности</span>.
+          </label>
+          <div class="social-links">
+            <span style="color: #6a5acd;">Facebook</span> | <span style="color: #6a5acd;">Apple</span> | <span style="color: #6a5acd;">Google</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  // Обработчик для кнопки "Зарегистрироваться"
+  document.getElementById('registerBtn').addEventListener('click', function(e) {
+    e.preventDefault(); // Предотвращаем стандартное поведение формы
+    window.location.href = 'home2.html';
+  });
+
+  // Обработчик для кнопки "Войти"
+  document.getElementById('signinBtn').addEventListener('click', function() {
+    window.location.href = 'home2.html';
+  });
+});
+</script>
+<style>
+    body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.screen-background {
+  background-color: #F5EFE8;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-container {
+  background: #fff;
+  display: flex;
+  width: 1100px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.left-image {
+  flex: 1;
+  background: #eee;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  object-fit: fill;
+}
+
+.left-image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: fill;
+}
+
+.form-section {
+  flex: 1;
+  padding: 40px;
+  position: relative;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 32px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #555;
+}
+
+.register-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form h2 {
+  margin-bottom: 20px;
+}
+
+.register-form input {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.register-btn {
+  background-color: #F8E0AD;
+  color: black;
+  border: none;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.signin-btn {
+  background-color: #eee;
+  color: #333;
+  border: none;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.terms {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.terms a {
+  color: #6a5acd;
+  text-decoration: none;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #6a5acd;
+  margin: 0 5px;
+  font-size: 14px;
+}
+</style>
+</html>
